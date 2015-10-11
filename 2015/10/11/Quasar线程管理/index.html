@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | My Tech Blog</title>
+  <title>Quasar线程管理 | My Tech Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="Quasar的所有线程调度是通过ForkJoinPool实现的，主要的问题在于ForkJoinPool在jdk1.7已经支持，而Quasar所需要的其它一些1.8中支持的java.concurrent中的类，在1.7中没有支持，所以使用了jsr166e进行支持，对JDK8和7采取了不同的package，对JDK7而言，首先需要修改这些类的package，其次，需要派生自FiberScheduler">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://ianynchen.github.io/techblog/2015/10/09/hello-world/index.html">
+<meta property="og:title" content="Quasar线程管理">
+<meta property="og:url" content="http://ianynchen.github.io/techblog/2015/10/11/Quasar线程管理/index.html">
 <meta property="og:site_name" content="My Tech Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-10-08T17:21:14.000Z">
+<meta property="og:description" content="Quasar的所有线程调度是通过ForkJoinPool实现的，主要的问题在于ForkJoinPool在jdk1.7已经支持，而Quasar所需要的其它一些1.8中支持的java.concurrent中的类，在1.7中没有支持，所以使用了jsr166e进行支持，对JDK8和7采取了不同的package，对JDK7而言，首先需要修改这些类的package，其次，需要派生自FiberScheduler">
+<meta property="og:updated_time" content="2015-10-11T02:23:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Quasar线程管理">
+<meta name="twitter:description" content="Quasar的所有线程调度是通过ForkJoinPool实现的，主要的问题在于ForkJoinPool在jdk1.7已经支持，而Quasar所需要的其它一些1.8中支持的java.concurrent中的类，在1.7中没有支持，所以使用了jsr166e进行支持，对JDK8和7采取了不同的package，对JDK7而言，首先需要修改这些类的package，其次，需要派生自FiberScheduler">
   
     <link rel="alternative" href="/atom.xml" title="My Tech Blog" type="application/atom+xml">
   
@@ -63,12 +60,16 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Quasar线程管理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/techblog/2015/10/09/hello-world/" class="article-date">
-  <time datetime="2015-10-08T17:21:14.000Z" itemprop="datePublished">2015-10-09</time>
+    <a href="/techblog/2015/10/11/Quasar线程管理/" class="article-date">
+  <time datetime="2015-10-11T02:14:25.000Z" itemprop="datePublished">2015-10-11</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/techblog/categories/thread/">thread</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -77,7 +78,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Quasar线程管理
     </h1>
   
 
@@ -85,20 +86,19 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>Quasar的所有线程调度是通过ForkJoinPool实现的，主要的问题在于ForkJoinPool在jdk1.7已经支持，而Quasar所需要的其它一些1.8中支持的java.concurrent中的类，在1.7中没有支持，所以使用了<a href="http://g.oswego.edu/dl/concurrency-interest/" target="_blank" rel="external">jsr166e</a>进行支持，对JDK8和7采取了不同的package，对JDK7而言，首先需要修改这些类的package，其次，需要派生自FiberScheduler以及HystrixThreadPool，通过将派生自HystrixThreadPool的FiberScheduler的子类传入HystrixCommand，来实现在quasar fiber上运行HystrixCommand。</p>
+<p>存疑：</p>
+<ol>
+<li><p>quasar fiber通过在一个线程上调度多个fiber任务达到减少上下文切换的目的，而Hystrix通过不同的CommandGroupKey实现不同组的HystrixCommand在不同的线程池上调度，避免命令之间阻塞，在quasar fiber的模式下，首先是是否这样不同的分组是否还有意义。</p>
+</li>
+<li><p>ThreadLocal模式在quasar fiber下有可能会失去意义，而实际上quasar也对ThreadLocal进行了进一步细分，这部分是否会影响Hystrix的运行。</p>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ianynchen.github.io/techblog/2015/10/09/hello-world/" data-id="ciflw00zp0003msyjqi2czogp" class="article-share-link">Share</a>
+      <a data-url="http://ianynchen.github.io/techblog/2015/10/11/Quasar线程管理/" data-id="ciflw00zs0004msyjj937jc1e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,15 +107,11 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/techblog/2015/10/11/Hystrix线程管理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hystrix线程管理
-        
-      </div>
-    </a>
   
+    <a href="/techblog/2015/10/11/Hystrix线程管理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hystrix线程管理</div>
+    </a>
   
 </nav>
 
