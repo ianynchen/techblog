@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="My Tech Blog">
-<meta property="og:url" content="http://ianynchen.github.io/index.html">
+<meta property="og:url" content="http://ianynchen.github.io/techblog/index.html">
 <meta property="og:site_name" content="My Tech Blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -53,13 +53,55 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ianynchen.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ianynchen.github.io/techblog"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Hystrix线程管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/techblog/2015/10/11/Hystrix线程管理/" class="article-date">
+  <time datetime="2015-10-11T01:24:33.000Z" itemprop="datePublished">2015-10-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/techblog/categories/thread/">thread</a>►<a class="article-category-link" href="/techblog/categories/thread/netflix-oss/">netflix oss</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/techblog/2015/10/11/Hystrix线程管理/">Hystrix线程管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Hystrix线程管理</p>
+<p>Hystrix通过HystrixThreadPool提供线程池，而HystrixThreadPool内部通过ThreadPoolExecutor生成线程，提供对不同CommandGroup的线程池支持，HystrixThreadPool通过getThreadPool返回一个ThreadPoolExecutor对象，支持实际的线程分配。由于ThreadPoolExecutor本身已经是从ExecutorService派生的对象，因此HystrixThreadPool在当前的设计下，不具备支持除了ThreadPoolExecutor以外的其它线程池的支持实现能力，已经提交该部分相关的pull request，将会融入hystrix 1.5</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ianynchen.github.io/techblog/2015/10/11/Hystrix线程管理/" data-id="ciflu3cc90000ktyjl5wupwk6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -96,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ianynchen.github.io/2015/10/09/hello-world/" data-id="cifiig5ls0000gayjoaw8kkdo" class="article-share-link">Share</a>
+      <a data-url="http://ianynchen.github.io/techblog/2015/10/09/hello-world/" data-id="ciflu3cd30005ktyjcnq0zf04" class="article-share-link">Share</a>
       
       
     </footer>
@@ -112,6 +154,13 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/techblog/categories/thread/">thread</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/techblog/categories/thread/netflix-oss/">netflix oss</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
   
     
   
@@ -121,7 +170,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/techblog/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/techblog/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -131,6 +180,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/techblog/2015/10/11/Hystrix线程管理/">Hystrix线程管理</a>
+          </li>
         
           <li>
             <a href="/techblog/2015/10/09/hello-world/">Hello World</a>

@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/10 | My Tech Blog</title>
+  <title>Hystrix线程管理 | My Tech Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Tech Blog">
-<meta property="og:url" content="http://ianynchen.github.io/techblog/archives/2015/10/index.html">
+  <meta name="description" content="#Hystrix线程管理
+Hystrix通过HystrixThreadPool提供线程池，而HystrixThreadPool内部通过ThreadPoolExecutor生成线程，提供对不同CommandGroup的线程池支持，HystrixThreadPool通过getThreadPool返回一个ThreadPoolExecutor对象，支持实际的线程分配。由于ThreadPoolExecuto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hystrix线程管理">
+<meta property="og:url" content="http://ianynchen.github.io/techblog/2015/10/11/Hystrix线程管理/index.html">
 <meta property="og:site_name" content="My Tech Blog">
-<meta property="og:description">
+<meta property="og:description" content="#Hystrix线程管理
+Hystrix通过HystrixThreadPool提供线程池，而HystrixThreadPool内部通过ThreadPoolExecutor生成线程，提供对不同CommandGroup的线程池支持，HystrixThreadPool通过getThreadPool返回一个ThreadPoolExecutor对象，支持实际的线程分配。由于ThreadPoolExecuto">
+<meta property="og:updated_time" content="2015-10-11T01:30:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Tech Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Hystrix线程管理">
+<meta name="twitter:description" content="#Hystrix线程管理
+Hystrix通过HystrixThreadPool提供线程池，而HystrixThreadPool内部通过ThreadPoolExecutor生成线程，提供对不同CommandGroup的线程池支持，HystrixThreadPool通过getThreadPool返回一个ThreadPoolExecutor对象，支持实际的线程分配。由于ThreadPoolExecuto">
   
     <link rel="alternative" href="/atom.xml" title="My Tech Blog" type="application/atom+xml">
   
@@ -59,58 +63,58 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/techblog/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/techblog/2015/10/11/Hystrix线程管理/" class="archive-article-date">
-  <time datetime="2015-10-11T01:24:33.000Z" itemprop="datePublished">Oct 11</time>
+        <section id="main"><article id="post-Hystrix线程管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/techblog/2015/10/11/Hystrix线程管理/" class="article-date">
+  <time datetime="2015-10-11T01:24:33.000Z" itemprop="datePublished">2015-10-11</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/techblog/categories/thread/">thread</a>►<a class="article-category-link" href="/techblog/categories/thread/netflix-oss/">netflix oss</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/techblog/2015/10/11/Hystrix线程管理/">Hystrix线程管理</a>
+    <h1 class="article-title" itemprop="name">
+      Hystrix线程管理
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/techblog/2015/10/09/hello-world/" class="archive-article-date">
-  <time datetime="2015-10-08T17:21:14.000Z" itemprop="datePublished">Oct 9</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/techblog/2015/10/09/hello-world/">Hello World</a>
-    </h1>
-  
+        <p>#Hystrix线程管理</p>
+<p>Hystrix通过HystrixThreadPool提供线程池，而HystrixThreadPool内部通过ThreadPoolExecutor生成线程，提供对不同CommandGroup的线程池支持，HystrixThreadPool通过getThreadPool返回一个ThreadPoolExecutor对象，支持实际的线程分配。由于ThreadPoolExecutor本身已经是从ExecutorService派生的对象，因此HystrixThreadPool在当前的设计下，不具备支持除了ThreadPoolExecutor以外的其它线程池的支持实现能力，已经提交该部分相关的pull request，将会融入hystrix 1.5</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ianynchen.github.io/techblog/2015/10/11/Hystrix线程管理/" data-id="ciflu3cc90000ktyjl5wupwk6" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/techblog/2015/10/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">
